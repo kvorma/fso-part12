@@ -1,0 +1,17 @@
+Script started on Sun Feb 15 19:50:44 2026
+[1m[7m%[27m[1m[0m                                                                                                                                                                            ]7;file://Mac/Users/vode/dev/FSO12/fso-part12/script-answers[0m[27m[24m[J~/dev/FSO12/fso-part12/script-answers > [K[?2004hddocker run i -it ubuntu bash[?2004l
+[?2004h]0;root@3576c703101f: /root@3576c703101f:/# uname -a
+[?2004lLinux 3576c703101f 6.12.67-linuxkit #1 SMP Mon Jan 26 23:07:00 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+[?2004h]0;root@3576c703101f: /root@3576c703101f:/# mkdir -p /usr/src/app
+[?2004l[?2004h]0;root@3576c703101f: /root@3576c703101f:/# touch /usr/scr  rc/app/index.js
+[?2004l[?2004h]0;root@3576c703101f: /root@3576c703101f:/# [Kexx ui  it
+[?2004lexit
+[1m[7m%[27m[1m[0m                                                                                                                                                                            ]7;file://Mac/Users/vode/dev/FSO12/fso-part12/script-answers[0m[27m[24m[J~/dev/FSO12/fso-part12/script-answers > [K[?2004heexit[?2004l
+
+Saving session...
+...copying shared history...cp: /Users/vode/.zsh_history: Permission denied
+
+...saving history...shell_session_save_history:14: permission denied: /Users/vode/.zsh_history
+truncating history files...shell_session_save_history:21: can't read history file /Users/vode/.zsh_history
+
+Script done on Sun Feb 15 19:51:51 2026
