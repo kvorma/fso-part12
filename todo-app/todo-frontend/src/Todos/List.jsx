@@ -2,12 +2,11 @@ import React from 'react'
 import Todo from './Todo'
 
 const TodoList = ({ todos, deleteTodo, completeTodo }) => {
-  console.log('todos=', todos)
   return (
     <>
       {todos.map(todo => {
         return (
-          <div key={todo._id}>
+          <div key={todo.id}>
             <Todo todo={todo} deleteTodo={deleteTodo} completeTodo={completeTodo} />
           </div>
         )

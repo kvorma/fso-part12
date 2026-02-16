@@ -9,7 +9,7 @@ COPY . .
 ENV VITE_BACKEND_URL=http://localhost:3000
 
 RUN npm ci
-
+RUN npm run test
 RUN npm run build
 
 # This is a new stage, everything before this is gone, except for the files that we want to COPY

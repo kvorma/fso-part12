@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Todo = ({ todo, deleteTodo, completeTodo }) => {
-  console.log('todo:', todo)
   const doneInfo = (
     <>
       <span>This todo is done</span>

@@ -35,9 +35,14 @@ const findByIdMiddleware = async (req, res, next) => {
 }
 
 /* DELETE todo. */
-singleRouter.delete('/', async (req, res) => {
-  await req.todo.delete()
-  res.sendStatus(200);
+singleRouter.delete('/:id', async (req, res) => {
+  try {
+    await Todo.deleteOne({ _id: req.params.id })
+    res.sendStatus(200)
+  } catch (e) {
+    console.error('deleteOne failed:', e.message)
+    res.sendStatus(500)
+  }
 });
 
 /* GET todo. */
