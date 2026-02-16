@@ -1,0 +1,7 @@
+services:
+  todoapp:
+    image: todo-frontend
+    build: .
+    ports:
+      - 8008:80
+

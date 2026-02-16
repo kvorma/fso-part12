@@ -64,3 +64,4 @@ typings/
 .dockerignore
 Dockerfile
 mongo_data
+redis_data

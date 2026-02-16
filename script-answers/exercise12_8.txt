@@ -1,0 +1,88 @@
+Script started on Mon Feb 16 13:06:22 2026
+[1m[7m%[27m[1m[0m                                                                                                                                                      ]7;file://Mac/Users/vode/dev/FSO12/fso-part12/script-answers[0m[27m[24m[J~/dev/FSO12/fso-part12/script-answers > [K[?2004hddocker container ls[?2004l
+CONTAINER ID   IMAGE     COMMAND                  CREATED       STATUS         PORTS                                           NAMES
+cb41e88b9959   mongo     "docker-entrypoint.s…"   4 hours ago   Up 5 minutes   0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+[1m[7m%[27m[1m[0m                                                                                                                                                      ]7;file://Mac/Users/vode/dev/FSO12/fso-part12/script-answers[0m[27m[24m[J~/dev/FSO12/fso-part12/script-answers > [K[?2004h[7mdocker exec -it cb bash[27m[23D[27md[27mo[27mc[27mk[27me[27mr[27m [27me[27mx[27me[27mc[27m [27m-[27mi[27mt[27m [27mc[27mb[27m [27mb[27ma[27ms[27mh[?2004l
+[?2004hroot@cb41e88b9959:/# mongosh -u root -p example
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	6992fa55efd52c0376284d0b
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.6.0[0m
+Using MongoDB:		8.2.5
+[1m[33mUsing Mongosh[0m:		2.6.0
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+[1G[0J [1G[?2004h[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2026-02-16T11:01:13.309+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2026-02-16T11:01:13.419+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2026-02-16T11:01:13.419+00:00: We suggest setting the contents of sysfsFile to 0.
+   2026-02-16T11:01:13.419+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         36.00 KiB
+[1mlocal[0m          64.00 KiB
+[1mthe_database[0m   72.00 KiB
+[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.find().pretty()
+[
+  {
+    _id: ObjectId([32m'6992c70c0b23d2e285284d0c'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'6992c70c0b23d2e285284d0d'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'6992fa049737b15995284d0c'[39m),
+    text: [32m'learn about mongosh'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.todos.insertOne({ text[33mtext[39m: [32m'[39m[32mC[39m[32mh[39m[32me[39m[32mc[39m[32mk[39m [32mP[39m[32mR[39m [32ms[39m[32mt[39m[32ma[39m[32mt[39m[32mu[39m[32ms[39m [32mi[39m[32mn[39m [32mG[39m[32mi[39m[32mt[39m[32mH[39m[32mu[39m[32mb[39m[32m'[39m, d[36mdo[39mdone: fals[33mfalse[39m })
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId([32m'6992fad1efd52c0376284d0c'[39m)
+}
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m: [32m'Check PR status in GitHub'[39m, [33mdone[39m: [33mfalse[39m })[85G[1G[0Jthe_database> db.todos.find().pretty()[39G
+[
+  {
+    _id: ObjectId([32m'6992c70c0b23d2e285284d0c'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'6992c70c0b23d2e285284d0d'[39m),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'6992fa049737b15995284d0c'[39m),
+    text: [32m'learn about mongosh'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'6992fad1efd52c0376284d0c'[39m),
+    text: [32m'Check PR status in GitHub'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15G
+[?2004l]0;[?2004hroot@cb41e88b9959:/# [?2004l
+exit
+[1m[7m%[27m[1m[0m                                                                                                                                                      ]7;file://Mac/Users/vode/dev/FSO12/fso-part12/script-answers[0m[27m[24m[J~/dev/FSO12/fso-part12/script-answers > [K[?2004h[?2004l
+
+Saving session...
+...copying shared history...cp: /Users/vode/.zsh_history: Permission denied
+
+...saving history...shell_session_save_history:14: permission denied: /Users/vode/.zsh_history
+truncating history files...shell_session_save_history:21: can't read history file /Users/vode/.zsh_history
+
+Script done on Mon Feb 16 13:09:44 2026
