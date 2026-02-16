@@ -45,7 +45,7 @@ singleRouter.get('/:id', async (req, res) => {
 /* PUT todo. */
 singleRouter.put('/:id', async (req, res) => {
   try {
-    const updated = await Todo.findByIdAndUpdate(req.todo._id, req.body, { new: true })
+    const updated = await Todo.findByIdAndUpdate(req.todo._id, req.body, { returnDocument: 'after' })
     if (updated) return res.send(updated)
   } catch (e) {
     console.error('PUT /todos/:id', e.message)
