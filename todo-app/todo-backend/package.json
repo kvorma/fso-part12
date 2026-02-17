@@ -7,12 +7,7 @@
     "dev": "nodemon ./bin/www",
     "d:up": "docker compose -f docker-compose-dev.yml up",
     "d:down": "docker compose -f docker-compose-dev.yml down",
-    "d:shell": "docker exec -it todo-backend-todoapp-dev-1 bash",
-    "app:build": "docker compose -f docker-compose-build.yml build",
-    "app:up": "docker compose -f docker-compose-build.yml up",
-    "app:down": "docker compose -f docker-compose-build.yml down",
-    "db:up": "docker compose -f docker-compose-dbs.yml up",
-    "db:down": "docker compose -f docker-compose-dbs.yml down"
+    "d:shell": "docker exec -it todo-backend-todoapp-dev-1 bash"
   },
   "dependencies": {
     "cors": "^2.8.6",
