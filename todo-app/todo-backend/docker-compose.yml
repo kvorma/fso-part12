@@ -1,0 +1,61 @@
+# Docker compose file for FSO exercises 12.x
+
+name: todoapp
+
+networks:
+  todoapp:
+
+
+volumes:
+  mongo_data:
+
+
+services:
+  todoapp:
+    depends_on:
+      - todoback
+    image: todo-frontend
+    build:
+      context: ../todo-frontend
+      dockerfile: Dockerfile-build
+    networks:
+      - todoapp
+    ports:
+      - 8008:80
+
+  todoback:
+    depends_on:
+      - mongo
+      - redis
+    image: todo-backend
+    build:
+      context: .
+      dockerfile: Dockerfile-build
+    networks:
+      - todoapp
+    ports:
+      - 3000:3000
+
+  mongo:
+    image: mongo
+    networks:
+      - todoapp
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    volumes:
+      - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - mongo_data:/data/db
+
+  redis:
+    image: redis
+    networks:
+      - todoapp
+    ports:
+      - 6379:6379
+    command: [ 'redis-server', '--appendonly', 'yes' ] # Overwrite the CMD
+    volumes:
+      - ./redis_data:/data

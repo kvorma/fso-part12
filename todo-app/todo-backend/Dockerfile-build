@@ -1,6 +1,6 @@
-FROM node:24
+FROM node:24 AS build-stage
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/build
 
 COPY --chown=node:node . .
 

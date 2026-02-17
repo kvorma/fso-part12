@@ -1,0 +1,11 @@
+# Docker file to develop in it
+
+FROM node:24 
+
+WORKDIR /usr/src/app 
+
+#RUN npm install 
+
+# for now, development container needs further manual setup so the sleep 10^6
+# keeps it alive and allows execin in and finishing the job.. 
+CMD "sleep 1000000"
