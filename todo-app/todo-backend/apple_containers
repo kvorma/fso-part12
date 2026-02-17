@@ -1,0 +1,5 @@
+c run -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=example -e MONGO_INITDB_DATABASE=the_database -v $PWD/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js --name mongo  mongo
+
+c run -e SKIP_FIX_PERMS=1 -v ./redis_data:/data --name redis redis
+
+MONGO_URL=mongodb://the_username:the_password@192.168.64.22:27017/the_database REDIS_URL=redis://192.168.64.23:6379 npm run dev

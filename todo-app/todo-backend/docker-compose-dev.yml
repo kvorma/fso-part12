@@ -1,0 +1,10 @@
+services:
+  todoapp-dev:
+    image: todo-backend-dev
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3000:3000

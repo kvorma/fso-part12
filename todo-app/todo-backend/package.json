@@ -4,7 +4,15 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "d:up": "docker compose -f docker-compose-dev.yml up",
+    "d:down": "docker compose -f docker-compose-dev.yml down",
+    "d:shell": "docker exec -it XXX bash",
+    "app:build": "docker compose -f docker-compose-build.yml build",
+    "app:up": "docker compose -f docker-compose-build.yml up",
+    "app:down": "docker compose -f docker-compose-build.yml down",
+    "db:start": "docker compose -f docker-compose-dbs.yml up",
+    "db:stop": "docker compose -f docker-compose-dbs.yml down"
   },
   "dependencies": {
     "cors": "^2.8.6",

@@ -1,6 +1,8 @@
 services:
   todoapp:
     image: todo-frontend
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile-build
     ports:
       - 8008:80
