@@ -5,9 +5,9 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "d:up": "docker compose -f docker-compose-dev.yml up",
-    "d:down": "docker compose -f docker-compose-dev.yml down",
-    "d:shell": "docker exec -it todo-backend-todoapp-dev-1 bash"
+    "d:up": "cd .. && docker compose -f docker-compose.dev.yml --profile dev up",
+    "d:down": "cd .. && docker compose -f docker-compose.dev.yml --profile dev down",
+    "d:shell": "docker exec -it tododev-todoback-1 bash"
   },
   "dependencies": {
     "cors": "^2.8.6",

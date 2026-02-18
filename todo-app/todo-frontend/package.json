@@ -9,9 +9,9 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest --run",
-    "d:up": "docker compose -f docker-compose-dev.yml up",
-    "d:down": "docker compose -f docker-compose-dev.yml down",
-    "d:shell": "docker exec -it todo-frontend-todoapp-dev-1 bash"
+    "d:up": "cd .. && docker compose -f docker-compose.dev.yml --profile dev up",
+    "d:down": "cd .. && docker compose -f docker-compose.dev.yml --profile dev down",
+    "d:shell": "docker exec -it tododev-todoapp-1 bash"
   },
   "dependencies": {
     "axios": "^1.13.5",

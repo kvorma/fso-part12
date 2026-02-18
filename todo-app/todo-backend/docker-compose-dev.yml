@@ -1,5 +1,11 @@
+name: todoapp
+
+networks:
+  todoapp:
+
+
 services:
-  todoapp-dev:
+  todoback:
     command: npm run dev
     image: todo-backend-dev
     build:
@@ -7,7 +13,10 @@ services:
       dockerfile: Dockerfile-dev
     volumes:
       - ./:/usr/src/app
+    networks:
+      - todoapp
     ports:
       - 3000:3000
-  debug-helper:
-    image: busybox
+    environment:
+      MONGO_URL: 'mongodb://the_username:the_password@todoapp-mongo-1:27017/the_database'
+      REDIS_URL: 'redis://todoapp-redis-1:6379'

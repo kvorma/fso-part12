@@ -3,14 +3,17 @@ import Todo from './Todo'
 
 const TodoList = ({ todos, deleteTodo, completeTodo }) => {
   return (
-    <>
-      {todos.map(todo => {
-        return (
-          <Todo key={todo._id} todo={todo} deleteTodo={deleteTodo} completeTodo={completeTodo} />
-        )
-      }).reduce((acc, cur) => [...acc, <hr />, cur], [])}
-    </>
+    <div>
+      <hr />
+      {todos.map(todo => (
+        <div key={todo._id}>
+          <Todo todo={todo} deleteTodo={deleteTodo} completeTodo={completeTodo} />
+          <hr />
+        </div>
+      ))}
+    </div>
   )
 }
+
 
 export default TodoList

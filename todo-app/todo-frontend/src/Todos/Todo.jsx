@@ -3,8 +3,8 @@ import React from 'react'
 const Todo = ({ todo, deleteTodo, completeTodo }) => {
   const doneInfo = (
     <>
-      <span>This todo is done</span>
-      <span>
+      <span >This todo is done</span>
+      <span >
         <button onClick={() => deleteTodo(todo)}> Delete </button>
       </span>
     </>
@@ -12,10 +12,10 @@ const Todo = ({ todo, deleteTodo, completeTodo }) => {
 
   const notDoneInfo = (
     <>
-      <span>
+      <span >
         This todo is not done
       </span>
-      <span>
+      <span >
         <button onClick={() => deleteTodo(todo)}> Delete </button>
         <button onClick={() => completeTodo(todo)}> Set as done </button>
       </span>
@@ -23,10 +23,10 @@ const Todo = ({ todo, deleteTodo, completeTodo }) => {
   )
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', maxWidth: '70%', margin: 'auto' }}>
-      <span style={{ textAlign: 'start' }}>
+    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', maxWidth: '80%', margin: 'auto' }}>
+      <span style={{ textAlign: 'left' }}>
         {todo.text}
-      </span>
+      </span >
       {todo.done ? doneInfo : notDoneInfo}
     </div>
   )
