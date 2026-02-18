@@ -9,8 +9,8 @@ todo-app
 ├── todo-backend            Backend  
 ├── redis_data              Data Store for Redis DB  
 ├── mongo/mongo-init.js     DB initialization for MongoDB  
-├── nginx*conf              Reverse proxy configuration, default port 8888  
-└── docker-compose*yml      Use this to build and run the stack  
+├── nginx.conf              Reverse proxy configuration, default port 8888  
+└── docker-compose.yml      Use this to build and run the stack  
 
 To start the stack run
 
