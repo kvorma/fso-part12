@@ -1,16 +1,16 @@
-# This is Full Stack Open exercise 12.20 project root
+# This is "Full Stack Open" exercise 12.20 project root
 
 Apps are set to run in Docker Desktop (tested on Mac with Apple Silicon)
 
 
 
-todo-app
-├── todo-frontend           React application
-├── todo-backend            Backend
-├── redis_data              Data Store for Redis DB
-├── mongo/mongo-init.js     DB initialization for MongoDB
-├── nginx.conf              Reverse proxy configuration, default port 8888
-└── docker-compose.yml      Use this to build and run the stack
+todo-app  
+├── todo-frontend           React application  
+├── todo-backend            Backend  
+├── redis_data              Data Store for Redis DB  
+├── mongo/mongo-init.js     DB initialization for MongoDB  
+├── nginx.conf              Reverse proxy configuration, default port 8888  
+└── docker-compose.yml      Use this to build and run the stack  
 
 To start the stack run
 
