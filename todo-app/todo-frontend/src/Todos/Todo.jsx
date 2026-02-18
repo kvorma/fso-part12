@@ -24,7 +24,7 @@ const Todo = ({ todo, deleteTodo, completeTodo }) => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', maxWidth: '70%', margin: 'auto' }}>
-      <span>
+      <span style={{ textAlign: 'start' }}>
         {todo.text}
       </span>
       {todo.done ? doneInfo : notDoneInfo}

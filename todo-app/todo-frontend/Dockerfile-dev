@@ -4,7 +4,10 @@ FROM node:24
 
 WORKDIR /usr/src/app 
 
+# currently done manually after starting the container with 
+# /usr/src/app mounted from dev host
 #RUN npm install 
 
 # npm run dev is the command to start the application in development mode
-CMD ["npm", "run", "dev", "--", "--host"]
+#CMD ["npm", "run", "dev", "--", "--host"]
+CMD sleep 1000000 

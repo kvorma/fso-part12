@@ -1,15 +1,14 @@
 # The first FROM is now a stage called build-stage
+# this is for apple containers
 
 FROM node:24 AS build-stage 
-
-ARG BACKEND_URL
 
 WORKDIR /usr/src/app
 
 COPY . .
 
-ENV VITE_BACKEND_URL=$BACKEND_URL
-RUN echo "backend url set to: $VITE_BACKEND_URL"
+ENV VITE_BACKEND_URL=http://todoback:3000
+
 RUN npm ci
 RUN npm run test
 RUN npm run build
