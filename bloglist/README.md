@@ -1,32 +1,37 @@
-# This is "Full Stack Open" exercise 12.20 project root
+# This is "Full Stack Open" exercise 12.22 project root
 
 Apps are set to run in Docker Desktop (tested on Mac with Apple Silicon)
 
+## Hierarchy
 
-
-todo-app  
-├── todo-frontend           React application  
-├── todo-backend            Backend  
-├── redis_data              Data Store for Redis DB  
+bloglist
+├── frontend                React application  
+├── backend                 Backend  
 ├── mongo/mongo-init.js     DB initialization for MongoDB  
-├── nginx.conf              Reverse proxy configuration, default port 8888  
+├── nginx.conf              Reverse proxy configuration, default port 8000  
+├── docker-compose.dev.yml  Brings up/down dev containers  
 └── docker-compose.yml      Use this to build and run the stack  
 
 To start the stack run
 
  - docker compose up
- - point browser to localhost:8888
+ - point browser to localhost:8000
 
 ## To develop (inside a container)
 
-if first time
+ - docker compose -f docker-compose.dev.yml up
+    - starts mongodb and front/back containers running npm run dev
+    - if host is a Mac (Apple silicon) Vite may crash not finding right module:
+    
+    Error: Cannot find module @rollup/rollup-linux-arm64-gnu.
 
- - cd frontend/backend
-   - docker build -f Dockerfile-dev 
-   - npm run d:shell
-   - complete setup with running npm install inside container 
-   - docker rm
+    - running npm install inside container should help (see package.json)
 
-Afterwards
+- when starting mongodb the first time it will run setup scripts from mongo_init.d/
+- after that the mount bind can be commented out
 
-- npm run d:up / d:down start and stop dev container
+## Containers
+
+- blogdb - runs mongodb on default port 27017
+- blogback - application backend, needs mongodb and listens to port 3000
+- blogapp - React app, hosted by nginx which listens port 80 and provides React app files as well as proxy for /api/ calls coming from the browser where React app lives
