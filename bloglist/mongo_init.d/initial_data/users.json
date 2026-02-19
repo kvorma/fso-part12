@@ -1,0 +1,49 @@
+{
+	"_id": {
+		"$oid": "6995e84d93faeda3842f84e8"
+	},
+	"username": "root",
+	"realname": "Superuser",
+	"passwordHash": "$2b$10$SlblZ8Z7.088vyR87.PodOwVgDxKFZop6FkuwjugtDNesN1EtTTPq",
+	"blogs": [
+		{
+			"$oid": "6995e84d93faeda3842f84ed"
+		},
+		{
+			"$oid": "6995e84d93faeda3842f84ee"
+		},
+		{
+			"$oid": "6995e84d93faeda3842f84ef"
+		},
+		{
+			"$oid": "6995e84d93faeda3842f84f0"
+		},
+		{
+			"$oid": "6995e84d93faeda3842f84f1"
+		},
+		{
+			"$oid": "6995e84d93faeda3842f84f2"
+		}
+	],
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "6995e84d93faeda3842f84e9"
+	},
+	"username": "mluukkai",
+	"realname": "Matti Luukkainen",
+	"passwordHash": "$2b$10$mBZeXJO7U52NiG22ioY3y.zMzjiQrqqdBUTb5iKJs0xiPCI1pRjMu",
+	"blogs": [],
+	"__v": 0
+}
+{
+	"_id": {
+		"$oid": "6995e84d93faeda3842f84ea"
+	},
+	"username": "vode",
+	"realname": "Kai Vorma",
+	"passwordHash": "$2b$10$AvvuCM9HhpHtlIdf73cdtep6kP5grqM55DSoqP/6ngoN49Z.jpjIi",
+	"blogs": [],
+	"__v": 0
+}

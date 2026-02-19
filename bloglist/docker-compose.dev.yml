@@ -1,0 +1,68 @@
+# Docker compose file for FSO exercises 12.21-22
+# used to bring up/down dev containers
+
+name: blogdev
+
+networks:
+  bloglist-dev:
+
+
+volumes:
+  mongo_data:
+
+
+services:
+
+  blogapp:
+    container_name: blogapp-dev
+    depends_on:
+      - mongo
+    command: npm run dev -- --host
+    image: blogapp-dev
+    build:
+      context: ./frontend
+      dockerfile: Dev.Dockerfile
+      args:
+        - BACKEND_URL='http://blogback-dev:3000'
+    networks:
+      - bloglist-dev
+    ports:
+      - 5173:5173
+    volumes:
+      - ./frontend:/usr/src/app
+    environment:
+      - VITE_BACKEND_URL=http://blogback-dev:3000
+
+  blogback:
+    container_name: blogback-dev
+    depends_on:
+      - mongo
+    command: npm run dev
+    image: blogback-dev
+    build:
+      context: ./backend
+      dockerfile: Dev.Dockerfile
+    networks:
+      - bloglist-dev
+    ports:
+      - 3000:3000
+      - 3001:3001
+    volumes:
+      - ./backend:/usr/src/app
+    environment:
+      - MONGODB_URI=mongodb://blogAdmin:blogSekret@blogdb-dev:27017/
+
+  mongo:
+    container_name: blogdb-dev
+    image: mongo
+    networks:
+      - bloglist-dev
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: TopSekret
+      MONGO_INITDB_DATABASE: blogList
+    volumes:
+      - mongo_data:/data/db
+      - ./backend/mongo_init.d:/docker-entrypoint-initdb.d:ro

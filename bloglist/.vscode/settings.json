@@ -1,0 +1,12 @@
+{
+  "folder-color.pathColors": [
+    {
+      "folderPath": "bloglist/frontend/",
+      "color": "foldercolorizer.color_3300ff"
+    },
+    {
+      "folderPath": "bloglist/backend/",
+      "color": "foldercolorizer.color_00cc00"
+    }
+  ]
+}

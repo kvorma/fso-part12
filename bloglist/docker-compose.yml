@@ -1,0 +1,59 @@
+# Docker compose file for FSO exercises 12.21-22
+
+name: bloglist
+
+networks:
+  bloglist:
+
+
+volumes:
+  mongo_data:
+
+
+services:
+  blogapp:
+    container_name: blogapp
+    depends_on:
+      - blogback
+      - mongo
+    image: blogapp
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - BACKEND_URL='http://localhost:8000'
+    networks:
+      - bloglist
+    ports:
+      - 8000:80
+    environment:
+      - VITE_BACKEND_URL='http://localhost:8000'
+
+  blogback:
+    container_name: blogback
+    depends_on:
+      - mongo
+    command: npm start
+    image: blogback
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    networks:
+      - bloglist
+    environment:
+      - MONGODB_URI=mongodb://blogAdmin:blogSekret@blogdb:27017/
+
+  mongo:
+    container_name: blogdb
+    image: mongo
+    networks:
+      - bloglist
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: TopSekret
+      MONGO_INITDB_DATABASE: blogList
+    volumes:
+      - mongo_data:/data/db
+      - ./mongo_init.d:/docker-entrypoint-initdb.d:ro
+
+# comment out the line above after mongo has been initialized. 

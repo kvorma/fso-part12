@@ -1,0 +1,84 @@
+{
+	"_id": {
+		"$oid": "6995e84d93faeda3842f84ed"
+	},
+	"title": "React patterns",
+	"author": "Michael Chan",
+	"url": "https://reactpatterns.com/",
+	"likes": 7,
+	"comments": [],
+	"__v": 0,
+	"owner": {
+		"$oid": "6995e84d93faeda3842f84e8"
+	}
+}
+{
+	"_id": {
+		"$oid": "6995e84d93faeda3842f84ee"
+	},
+	"title": "Go To Statement Considered Harmful",
+	"author": "Edsger W. Dijkstra",
+	"url": "http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
+	"likes": 5,
+	"comments": [],
+	"__v": 0,
+	"owner": {
+		"$oid": "6995e84d93faeda3842f84e8"
+	}
+}
+{
+	"_id": {
+		"$oid": "6995e84d93faeda3842f84ef"
+	},
+	"title": "Canonical string reduction",
+	"author": "Edsger W. Dijkstra",
+	"url": "http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html",
+	"likes": 12,
+	"comments": [],
+	"__v": 0,
+	"owner": {
+		"$oid": "6995e84d93faeda3842f84e8"
+	}
+}
+{
+	"_id": {
+		"$oid": "6995e84d93faeda3842f84f0"
+	},
+	"title": "First class tests",
+	"author": "Robert C. Martin",
+	"url": "http://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.htmll",
+	"likes": 10,
+	"comments": [],
+	"__v": 0,
+	"owner": {
+		"$oid": "6995e84d93faeda3842f84e8"
+	}
+}
+{
+	"_id": {
+		"$oid": "6995e84d93faeda3842f84f1"
+	},
+	"title": "TDD harms architecture",
+	"author": "Robert C. Martin",
+	"url": "http://blog.cleancoder.com/uncle-bob/2017/03/03/TDD-Harms-Architecture.html",
+	"likes": 0,
+	"comments": [],
+	"__v": 0,
+	"owner": {
+		"$oid": "6995e84d93faeda3842f84e8"
+	}
+}
+{
+	"_id": {
+		"$oid": "6995e84d93faeda3842f84f2"
+	},
+	"title": "Type wars",
+	"author": "Robert C. Martin",
+	"url": "http://blog.cleancoder.com/uncle-bob/2016/05/01/TypeWars.html",
+	"likes": 2,
+	"comments": [],
+	"__v": 0,
+	"owner": {
+		"$oid": "6995e84d93faeda3842f84e8"
+	}
+}
