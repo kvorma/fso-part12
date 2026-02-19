@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "lintfix": "eslint --fix .",
     "preview:": "vite preview",
-    "start:test": "PORT=3001 vite preview",
+    "start:test": "VITE_BACKEND_URL=http://blogback:3001 vite preview",
     "test:e2e": "playwright test --workers=1",
     "test:e2e-ui": "playwright test --ui --workers=1",
     "d:shell": "docker exec -it blogapp-dev bash"

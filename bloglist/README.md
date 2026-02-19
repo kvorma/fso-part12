@@ -8,7 +8,7 @@ bloglist
 ├── frontend                React application  
 ├── backend                 Backend  
 ├── mongo/mongo-init.js     DB initialization for MongoDB  
-├── nginx.conf              Reverse proxy configuration, default port 8000  
+├── nginx.conf              Reverse proxy configuration, copied into container image 
 ├── docker-compose.dev.yml  Brings up/down dev containers  
 └── docker-compose.yml      Use this to build and run the stack  
 
@@ -29,6 +29,21 @@ To start the stack run
 
 - when starting mongodb the first time it will run setup scripts from mongo_init.d/
 - after that the mount bind can be commented out
+
+## To test
+
+backend:
+
+Inside container:
+
+- npm run test : run some unit tests for the backend
+- npm run start:test : start backend in test mode (port 3001/blogTest db)
+
+frontend:
+
+From host after backend has been started in test mode
+
+- npm run test:e2e
 
 ## Containers
 

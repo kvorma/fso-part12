@@ -28,6 +28,7 @@ services:
       - bloglist-dev
     ports:
       - 5173:5173
+      - 4173:4173
     volumes:
       - ./frontend:/usr/src/app
     environment:
