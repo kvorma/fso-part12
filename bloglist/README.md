@@ -8,7 +8,7 @@ bloglist
 ├── frontend                React application  
 ├── backend                 Backend  
 ├── mongo/mongo-init.js     DB initialization for MongoDB  
-├── nginx.conf              Reverse proxy configuration, copied into container image 
+├── nginx.conf              Reverse proxy configuration, copied into container image   
 ├── docker-compose.dev.yml  Brings up/down dev containers  
 └── docker-compose.yml      Use this to build and run the stack  
 
